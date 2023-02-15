@@ -16,7 +16,7 @@ jobs:
           git config --local user.name "Github Actions"
     - name: Merge master back to dev
       run: |
-          git fetch
+          git fetch --unshallow
           git checkout dev
           git pull
           git merge --no-commit main
