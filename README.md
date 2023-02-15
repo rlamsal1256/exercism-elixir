@@ -1,3 +1,3 @@
 # exercism-elixir
 
-This is MAIN
+This is PRODUCTION
