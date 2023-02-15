@@ -1,7 +1,7 @@
-name: PRs to master
+name: PRs to main
 on: 
   pull_request:
-    branches: [master]
+    branches: [main]
     types: [closed]
 jobs:
   merge-master-back-to-dev:
@@ -19,5 +19,5 @@ jobs:
           git fetch
           git checkout dev
           git pull
-          git merge --no-commit master
+          git merge --no-commit main
           git push
