@@ -31,6 +31,7 @@ jobs:
     - name: Echo flag
       run: |
           echo env.flag
+          echo ${{ env.flag }}
     - name: Create Pull Request
-      if: env.flag
+      if: ${{ env.flag }}
       uses: peter-evans/create-pull-request@v4
