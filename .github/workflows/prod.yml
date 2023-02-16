@@ -28,10 +28,6 @@ jobs:
             echo "flag=false" >> $GITHUB_ENV
             echo "flag set to false"
           fi
-    - name: Echo flag
-      run: |
-          echo env.flag
-          echo ${{ env.flag }}
     - name: Create Pull Request
       if: ${{ env.flag }}
       uses: peter-evans/create-pull-request@v4
