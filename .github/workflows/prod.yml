@@ -20,6 +20,13 @@ jobs:
           git checkout main
           git pull
           git merge --no-commit PRODUCTION --strategy-option theirs
+          $files_chanaged=$(git diff --name-status master..master | wc -l)
+          if ((files_changed > 0)); then
+            echo "flag=true" >> $GITHUB_ENV
+          else
+            echo "flag=false" >> $GITHUB_ENV
+          fi
+
     - name: Create Pull Request
-      if: git diff --name-status master..master | wc -l > 0
+      if: env.flag
       uses: peter-evans/create-pull-request@v4
